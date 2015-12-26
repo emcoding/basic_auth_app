@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>BasicAuthApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>BasicAuthApp</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="container">
+      <div id="user_header">
+        <%= link_to "Meld je aan", new_user_path %>
+      </div>
 
-<%= yield %>
+      <% flash.each do |name, message| %>
+        <%= content_tag :div, message, id: "flash#{name}" %>
+      <% end %>
 
+      <%= yield %>
+
+    </div>
 </body>
 </html>
