@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       redirect_to root_url, notice: "Welkom! Je account is klaar"
     else
       render "new" #todo change to better ending
