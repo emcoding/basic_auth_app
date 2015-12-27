@@ -9,7 +9,8 @@
   <body>
     <div id="container">
       <div id="user_header">
-        <%= link_to "Meld je aan", new_user_path %>
+        <%= link_to "Meld je aan", new_user_path %> of
+        <%= link_to "log in", new_session_path %>
       </div>
 
       <% flash.each do |name, message| %>
