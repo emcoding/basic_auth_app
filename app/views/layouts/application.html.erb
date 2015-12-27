@@ -11,7 +11,7 @@
       <div id="user_header">
         <% if current_user %>
           Ingelogd als <%= current_user.email %>
-            <%= link_to "log uit", logout_path %>
+            <%= link_to "log uit", logout_path, method: :delete %>
         <% else %>
           <%= link_to "Meld je aan", aanmelden_path %> of
           <%= link_to "log in", inloggen_path %>
