@@ -11,6 +11,7 @@
       <div id="user_header">
         <% if current_user %>
           Ingelogd als <%= current_user.email %>
+            <%= link_to "log uit", session_path("placeholder"), method: :delete %>
         <% else %>
           <%= link_to "Meld je aan", new_user_path %> of
           <%= link_to "log in", new_session_path %>
