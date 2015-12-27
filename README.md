@@ -1,9 +1,10 @@
-== README
-
 This is a basic app based upon Railscast #250: authentication from scratch, adjusted for:
 
 - Ruby 2.2.2
 - Rails 4.2.3
+
+>`has_secure_password` is an instance method of the ActiveModel::SecurePassword module, that is included in
+> Active Record
 
 Steps to get there:
 (See commits for code details)
@@ -11,7 +12,7 @@ Steps to get there:
 #Part 1: Basic setup
 
 With a (new) app in place:
-###1) add model and controller with 
+###1) add user model and controller with 
 ```$ rails g resource user email password_digest
 $ rake db: migrate```
 
@@ -31,7 +32,8 @@ In gemfile: uncomment `bcrypt`, make it '-> 3.1.7'
 * has_secure_password comes with built in methods, like :authenticate,  
 and all kind of validations, including password_confirmation,
  in order to set and authenticate against bcrypt.  
- It uses a password_digest attribute.  
+ It uses a password_digest attribute.
+   * You can skip password_confirmation by leaving it out of the form/attributes.
 * Change in Bates' setup:
  I didn't add the attr_accessible parameters.
  From Rails4 on, it is no longer needed in the model, we'll add it in the Controller 
@@ -80,11 +82,10 @@ Add log in from sessions_controller to sign up in users_controller.
 
 ###10) Bates sequence: Store cookie and Reset password in RailsCast #274
  
- To DO
+#To DO
  
- [ ] Add tests
-
-  [ ] Check Hartl
-  [ ] Restrict routes to :only routes in use. (The motivation behind this feature is that complex routing consumes a lot of memory. So eliminating unnecessary and unused routes can significantly reduce your memory consumption. )
-  [ ] Optimize UI for logging in and signing up
-   [ ] Add css
+- [ ] Check Hartl
+- [ ] Add tests    
+- [ ] Restrict routes to :only routes in use. (The motivation behind this feature is that complex routing consumes a lot of memory. So eliminating unnecessary and unused routes can significantly reduce your memory consumption. )
+- [ ] Optimize UI for logging in and signing up
+- [ ] Add css
