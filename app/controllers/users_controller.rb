@@ -4,12 +4,15 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def create
+  def show
+    @user = User.find(params[:id])
+  end
 
+  def create
     @user = User.new(user_params)
     if @user.save
-      session[:user_id] = @user.id
-      redirect_to root_url, notice: "Welkom! Je account is klaar"
+      log_in(@user)
+      redirect_to @user
     else
       render "new" #todo change to better ending
     end
@@ -18,8 +21,8 @@ class UsersController < ApplicationController
 
 private
 
- def user_params
+  def user_params
    params.require(:user).permit(:email, :password, :password_confirmation)
- end
+  end
 
 end
