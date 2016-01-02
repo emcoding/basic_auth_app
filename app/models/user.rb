@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
   has_secure_password
-
-  validates :email, uniqueness: true
+  before_save { email.downcase! }
+  validates :email, presence: true, uniqueness: true
 end

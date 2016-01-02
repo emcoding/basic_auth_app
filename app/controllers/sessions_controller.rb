@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     #authenticate before saving. :authenticate method
     # comes with has_secure_password
-    user = User.find_by_email(params[:email])
+    user = User.find_by_email(params[:email].downcase)
     if user && user.authenticate(params[:password])
       log_in(user)
       redirect_to user
