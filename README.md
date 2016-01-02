@@ -110,6 +110,7 @@ becomes overloaded, then move it to sessions_helper)
 - [ ] Optimize UI for logging in and signing up
 - [ ] Add CanCanCan authorization
 - [ ] Add css
+- [ ] http://zurb.com/university/lessons/prevent-trouble-with-social-logins
 
 
 is this correct?
