@@ -1,29 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>BasicAuthApp</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=Fredericka+the+Great|Raleway:400,300' rel='stylesheet' type='text/css'>
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
+
   <body>
-    <div id="container">
-      <div id="user_header">
-        <% if current_user %>
-          Ingelogd als <%= current_user.email %>
-            <%= link_to "log uit", logout_path, method: :delete %>
-        <% else %>
-          <%= link_to "Meld je aan", aanmelden_path %> of
-          <%= link_to "log in", inloggen_path %>
-        <% end %>
-      </div>
 
+  <div id="user_header">
+    <% if current_user %>
+        Ingelogd als <%= current_user.email %>
+        <%= link_to "log uit", logout_path, method: :delete %>
+    <% else %>
+        <%= link_to "Meld je aan", aanmelden_path %> of
+        <%= link_to "log in", inloggen_path %>
+    <% end %>
+  </div>
+
+  <!--Main container-->
+  <div id="playfield">
+    <%= yield %>
+    <div id="messages">
       <% flash.each do |name, message| %>
-        <%= content_tag :div, message, id: "flash#{name}" %>
+          <%= content_tag :div, message, id: "flash#{name}" %>
       <% end %>
-
-      <%= yield %>
-
     </div>
-</body>
+  </div>
+  <!--</div>-->
+
+  </body>
 </html>
