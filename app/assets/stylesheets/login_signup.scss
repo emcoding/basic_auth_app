@@ -1,0 +1,22 @@
+//inside the #playfield
+
+.loginfield {
+  display: inline-block;
+  //border-color: darken($main-color, 10%);
+  border-color: deeppink;
+  margin-top: 5px;
+
+  #label {
+    display: block;
+    text-align: left;
+  }
+}
+
+.button {
+  background-color: $info-color ;
+  color: $primary-color;
+
+  &:focus {
+    outline-color: $primary-color;
+  }
+}
