@@ -1,34 +1,38 @@
-<h2>Maak een account</h2>
+<h2>Account maken</h2>
 
 
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
-    <div class="error_messages"></div>
       <div class="error_messages">
-        <h2>"Oeps! Er klopt iets niet</h2>
-        <ul>
-          <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
+        <p>Oeps! Er klopt iets niet :-( </p>
+        <ul><% @user.errors.full_messages.each do |message| %>
+            <small><li><%= message %></li></small>
           <% end %>
         </ul>
       </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :email %>
+  <div class="loginfield" style="padding-top: 40px">
+    <div id="label"><%= f.label :email, autofocus: true %></div>
     <%= f.email_field :email %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
+  <div class="loginfield">
+   <div id="label"> <%= f.label :password, "Kies wachtwoord" %> </div>
     <%= f.password_field :password %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %>
+  <div class="loginfield">
+    <div id="label"><%= f.label :password_confirmation, "Herhaal wachtwoord" %></div>
     <%= f.password_field :password_confirmation %>
   </div>
 
-  <div class="actions"><%= f.submit "OK" %></div>
 
+  <ul class="button-group">
+    <li><%= f.submit "Maak mijn account", class: "button tiny"%></li>
+    <li style="margin-left: 5px"><small> of <%= link_to "log in", inloggen_path %></small></li>
+  </ul> <!--  button-group end -->
 <% end %>
+
+<!--stack-for-small text-center-->
+<!--small-centered stack-for-small  text-center-->
