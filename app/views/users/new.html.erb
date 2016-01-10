@@ -1,5 +1,5 @@
-<h2>Account maken</h2>
-
+<h1>Account maken</h1>
+<%= content_for :title do %> Inloggen <% end %>
 
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
@@ -30,10 +30,6 @@
 
   <ul class="button-group">
     <li><%= f.submit "Maak mijn account", class: "button tiny"%></li>
-    <li style="margin-left: 5px"><small> of <%= link_to "log in", inloggen_path %></small></li>
+    <li> <%= link_to " of log meteen in als je al een account hebt", inloggen_path, class: "button secondary tiny" %></li>
   </ul> <!--  button-group end -->
 <% end %>
-
-<!-- TODO find way to stack button and link centered on small
-<!--stack-for-small text-center-->
-<!--small-centered stack-for-small  text-center-->
