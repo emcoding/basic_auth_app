@@ -6,3 +6,20 @@ h2 {
   padding: 80px 0px;
   text-align: center;
 }
+
+/*************
+Nav bar stuff
+************/
+
+//Best way to put the line under the navbar (without the buttons
+//overlapping the border line)
+.top-bar {
+  -moz-box-shadow: 0 1px $info-color;
+  -webkit-box-shadow: 0 1px $info-color;
+  box-shadow: 0 1px $info-color;
+}
+
+//Accent on the login link
+#see_me {
+  background-color: $primary-color;
+  }
