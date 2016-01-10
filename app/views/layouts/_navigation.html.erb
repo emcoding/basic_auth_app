@@ -1,0 +1,44 @@
+<nav class="top-bar" data-topbar>
+
+
+  <!-- title/logo -->
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to "Starter App Login", root_path %></h1>
+    </li>
+
+    <!-- Collapsible Button on small screens -->
+    <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <!--start section left-->
+  <section class="top-bar-section">
+    <ul class="left">
+      <li class="active"><%=link_to "Home", root_path %></li>
+        <!--<a href="#"></a></li>-->
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+  </section>
+  <!--end section left-->
+
+  <!--start section right-->
+  <section class="top-bar-section">
+    <ul class="right">
+      <!--User header: select what links to show-->
+      <div id="user-header">
+        <% if current_user %>
+            <li><%= current_user.email %> </li>
+            <li><%= link_to "log uit", logout_path, method: :delete %></li>
+        <% else %>
+            <li><%= link_to "Maak je account ", aanmelden_path %></li>
+
+            <li><%= link_to "log in", inloggen_path, id: "see_me" %></li>
+        <% end %>
+      </div> <!--end user header -->
+    </ul> <!--close right ul-->
+  </section>
+  <!--end section right-->
+
+</nav>

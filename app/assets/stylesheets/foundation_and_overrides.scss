@@ -222,7 +222,7 @@ $include-html-global-classes: $include-html-classes;
 
 // We use these to control header font sizes
 // $h1-font-size: rem-calc(44);
-// $h2-font-size: rem-calc(37);
+ $h2-font-size: rem-calc(23);          //(37);
 // $h3-font-size: rem-calc(27);
 // $h4-font-size: rem-calc(23);
 // $h5-font-size: rem-calc(18);
@@ -1404,7 +1404,7 @@ $label-font-color: $jet;// $oil;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: $oil;
+ $topbar-bg-color:$secondary-color;            //$oil;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1416,7 +1416,7 @@ $label-font-color: $jet;// $oil;
 // $topbar-title-font-size: rem-calc(17);
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: $white;
+$topbar-link-color: $jet; //$white;
 // $topbar-link-color-hover: $white;
 // $topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
@@ -1437,8 +1437,8 @@ $label-font-color: $jet;// $oil;
 // $topbar-button-top: 7px;
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: $oil;
-// $topbar-dropdown-link-color: $white;
+$topbar-dropdown-bg: $secondary-color; //$oil;
+ $topbar-dropdown-link-color: $jet; //$white;
 // $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
 // $topbar-dropdown-link-bg: $oil;
 // $topbar-dropdown-link-bg-hover: $jet;

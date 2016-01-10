@@ -1,5 +1,5 @@
 <!--<h1>Log in</h1>-->
-<% content_for :title do %> Inloggen <% end %>
+<%= content_for :title do %> Inloggen <% end %>
 
 <%= form_tag sessions_path do %>
   <div class="loginfield">
@@ -13,7 +13,10 @@
     <%= password_field_tag :password %>
   </div>
 
-  <div>
-    <%= submit_tag "Inloggen", class: "button tiny" %>
-  </div>
+  <ul class="button-group" >
+    <li><%= submit_tag "Inloggen", class: "button tiny" %></li>
+    <li style="margin-left: 5px" ><small>Nog geen account? <%= link_to "Maak mijn account", aanmelden_path %> </small>
+    </li>
+  </ul>
+
 <% end %>
