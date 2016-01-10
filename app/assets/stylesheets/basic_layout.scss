@@ -1,5 +1,7 @@
-h2 {
-  font-family: 'Fredericka the Great', cursive;
+//Customized styling
+
+h1 {
+  font-family: 'Cabin Sketch', cursive;
 }
 
 #playfield {
@@ -7,8 +9,31 @@ h2 {
   text-align: center;
 }
 
+.button {
+  background-color: $info-color;
+  color: $primary-color;
+
+  &:focus {
+    outline-color: $primary-color;
+  }
+}
+
+/*********
+ Forms
+*********/
+
+.loginfield {
+  display: inline-block;
+  margin-top: 5px;
+
+  #label {
+    display: block;
+    text-align: left;
+  }
+}
+
 /*************
-Nav bar stuff
+ Nav bar stuff
 ************/
 
 //Best way to put the line under the navbar (without the buttons
@@ -21,5 +46,24 @@ Nav bar stuff
 
 //Accent on the login link
 #see_me {
+  color: $white;
   background-color: $primary-color;
+
+  &:hover {
+    background-color: $jet;
   }
+}
+
+.button-group {
+  a.button.secondary {
+    color: $jet;
+    text-decoration: underline;
+    padding-left: 5px;
+    padding-right: 30px;
+
+    &:hover {
+      background-color: $secondary-color;
+      color: $primary-color;
+    }
+ }
+}

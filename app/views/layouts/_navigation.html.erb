@@ -7,7 +7,7 @@
       <h1><%= link_to "Starter App Login", root_path %></h1>
     </li>
 
-    <!-- Collapsible Button on small screens -->
+    <!-- Menu Button on small screens -->
     <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
   </ul>
 
@@ -26,11 +26,11 @@
       <!--User header: select what links to show-->
       <div id="user-header">
         <% if current_user %>
-            <li><%= current_user.email %> </li>
+            <li><a> <%= current_user.email  %> </a></li>
+
             <li><%= link_to "log uit", logout_path, method: :delete %></li>
         <% else %>
             <li><%= link_to "Maak je account ", aanmelden_path %></li>
-
             <li><%= link_to "log in", inloggen_path, id: "see_me" %></li>
         <% end %>
       </div> <!--end user header -->

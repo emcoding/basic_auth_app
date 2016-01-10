@@ -1,22 +1,25 @@
-<!--<h1>Log in</h1>-->
 <%= content_for :title do %> Inloggen <% end %>
 
+<!--Log in form-->
 <%= form_tag sessions_path do %>
-  <div class="loginfield">
 
-    <div id="label">
-    <%= label_tag :email %></div>
-   <%= email_field_tag :email, params[:email], autofocus: true %>
-  </div>
-  <div class="loginfield">
-    <div id="label"><%= label_tag :password, "Wachtwoord" %></div>
-    <%= password_field_tag :password %>
-  </div>
+    <!--Form fields w labels abova-->
+    <div class="loginfield">
+      <div id="label">
+        <%= label_tag :email %></div>
+        <%= email_field_tag :email, params[:email], autofocus: true %>
+      </div>
+    <div class="loginfield">
+      <div id="label"><%= label_tag :password, "Wachtwoord" %></div>
+      <%= password_field_tag :password %>
+    </div>
 
-  <ul class="button-group" >
-    <li><%= submit_tag "Inloggen", class: "button tiny" %></li>
-    <li style="margin-left: 5px" ><small>Nog geen account? <%= link_to "Maak mijn account", aanmelden_path %> </small>
-    </li>
-  </ul>
+    <!--Submit button group-->
+    <ul class="button-group" >
+      <li><%= submit_tag "Inloggen", class: "button tiny" %></li>
+      <li><%= link_to "Nog geen account? Maak eerst een account", aanmelden_path, class: "button secondary tiny" %> </li>
+    </ul>
+    <!--END button group-->
 
 <% end %>
+<!--END login form-->
