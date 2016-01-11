@@ -9,7 +9,6 @@
     <link href='https://fonts.googleapis.com/css?family=Fredericka+the+Great|Raleway:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css">
     <link href='https://fonts.googleapis.com/css?family=Cabin+Sketch' rel='stylesheet' type='text/css'>
-  <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
     <!--Required for Foundation-->
     <%= stylesheet_link_tag    "application" %>
@@ -21,7 +20,6 @@
 
   <body>
     <header>
-      <title><%= content_for?(:title)  %>PIEP </title>
       <%= render 'layouts/navigation' %>
     </header>
 
